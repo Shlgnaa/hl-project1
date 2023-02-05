@@ -1,9 +1,15 @@
-import { mainLogic } from '../index.js';
-import { getRandomNum, getRandomOperator } from '../tools.js';
+import mainLogic from '../index.js';
+import getRandomNum from '../tools.js';
 
-export const calcGame = () => {
+export default () => {
   const rules = 'What is the result of the expression?';
   const round = () => {
+    const getRandomOperator = () => {
+      const operators = ['+', '-', '*'];
+      const operatorIndex = getRandomNum(operators.length);
+      return operators[operatorIndex];
+    };
+
     const operand1 = getRandomNum();
     const operand2 = getRandomNum();
     const operator = getRandomOperator();
@@ -19,6 +25,8 @@ export const calcGame = () => {
         break;
       case '*':
         answer = operand1 * operand2;
+        break;
+      default:
         break;
     }
     return [question, answer.toString()];
