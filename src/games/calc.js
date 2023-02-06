@@ -27,7 +27,7 @@ export default () => {
         answer = operand1 * operand2;
         break;
       default:
-        break;
+        return null;
     }
     return [question, answer.toString()];
   };

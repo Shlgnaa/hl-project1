@@ -19,9 +19,9 @@ export default () => {
 
       return [result, hiddenValue];
     };
+
     const progression = makeProgression();
-    const question = progression[0];
-    const answer = progression[1];
+    const [question, answer] = progression;
 
     return [question.join(' '), answer.toString()];
   };

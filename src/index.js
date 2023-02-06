@@ -7,11 +7,11 @@ export default (gameRules, makeRounds) => {
   console.log(`Hello, ${userName}!`);
   console.log(`${gameRules}`);
 
+  const winningScore = 3;
   let score = 0;
-  while (score < 3) {
+  while (score < winningScore) {
     const match = makeRounds();
-    const quiz = match[0];
-    const answer = match[1];
+    const [quiz, answer] = match;
     const playersAnswer = readlineSync.question(
       `Question: ${quiz}\nYour answer: `,
     );
