@@ -6,15 +6,15 @@ export default () => {
   const round = () => {
     const num1 = getRandomNum();
     const num2 = getRandomNum();
-    const gcd = (a, b) => {
+    const getGCD = (a, b) => {
       if (b === 0) {
         return a;
       }
-      return gcd(b, a % b);
+      return getGCD(b, a % b);
     };
 
     const question = `${num1} ${num2}`;
-    const answer = gcd(num1, num2);
+    const answer = getGCD(num1, num2);
 
     return [question, answer.toString()];
   };
